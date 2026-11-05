@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<defs><pattern id="h" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="16" height="16" fill="#2a3135"/><rect width="3" height="16" fill="#323a3f"/></pattern></defs>
+<rect width="1200" height="900" fill="url(#h)"/>
+<g fill="none" stroke="#f2741f" stroke-width="4"><path d="M45 81V45H81"/><path d="M1155 81V45H1119"/><path d="M45 819V855H81"/><path d="M1155 819V855H1119"/></g>
+<g font-family="Oswald, 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif" text-anchor="middle">
+<text x="600" y="339.3" font-size="23" letter-spacing="4.6" fill="#f2741f" font-weight="600">PHOTO PLACEHOLDER</text>
+<text x="600" y="415.2" font-size="41" fill="#c3cacd" font-weight="600">OVERGROWN RESIDENTIAL LOT</text>
+<text x="600" y="464.4" font-size="41" fill="#c3cacd" font-weight="600">BEING CLEARED WITH A</text>
+<text x="600" y="513.6" font-size="41" fill="#c3cacd" font-weight="600">COMPACT EXCAVATOR</text>
+<text x="600" y="565.6" font-size="23" letter-spacing="2.3" fill="#8d979c">1200 × 900</text>
+</g>
+</svg>
