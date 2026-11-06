@@ -63,6 +63,10 @@ a {
 }
 a:hover { color: var(--orange-dark); }
 
+/* Phone numbers inside sentences: orange text instead of an underline */
+p a[href^="tel:"] { color: var(--orange-dark); font-weight: 600; text-decoration: none; white-space: nowrap; }
+p a[href^="tel:"]:hover { font-weight: 800; }
+
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 600;
@@ -109,13 +113,11 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 /* ---------- Type helpers ---------- */
 
 .eyebrow {
-  display: flex; align-items: center; gap: .75rem;
   font-family: var(--font-body); font-weight: 700; font-size: .8125rem;
   letter-spacing: .16em; text-transform: uppercase;
   color: var(--orange-dark);
   margin: 0 0 1.1rem;
 }
-.eyebrow::before { content: ""; flex: none; width: 2rem; height: 3px; background: var(--orange); }
 .on-dark .eyebrow, .bg-dark .eyebrow { color: var(--orange-hi); }
 
 .lead { font-size: clamp(1.2rem, 1.6vw, 1.4rem); line-height: 1.5; max-width: 34em; }
