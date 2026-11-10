@@ -305,12 +305,9 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .hero h1 .hl { display: block; color: var(--orange-hi); }
 .hero .lead { margin-bottom: 2.25rem; }
 
-.hero__media { position: absolute; top: 0; right: 0; bottom: 0; width: 44%; z-index: 1; }
+/* The photo ends at a solid orange edge instead of fading into the background */
+.hero__media { position: absolute; top: 0; right: 0; bottom: 0; width: 44%; z-index: 1; border-left: 6px solid var(--orange); }
 .hero__media img { width: 100%; height: 100%; object-fit: cover; }
-.hero__media::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(90deg, var(--ink) 0, rgba(28, 33, 36, 0) 28%);
-}
 
 .facts {
   display: flex; flex-wrap: wrap; gap: .5rem 1.75rem;
@@ -342,7 +339,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .page-hero h1 { font-size: clamp(2.4rem, 5vw, 4.25rem); }
 .page-hero .lead { margin-bottom: 2rem; }
 .page-hero__media { margin: 0; }
-.page-hero__media img { border-radius: var(--radius); box-shadow: 0 30px 50px -30px rgba(0, 0, 0, .7); }
+.page-hero__media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); box-shadow: 0 30px 50px -30px rgba(0, 0, 0, .7); }
 
 .crumbs ol {
   display: flex; flex-wrap: wrap; gap: .25rem .5rem;
@@ -387,7 +384,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 /* Services index */
 .svc { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
 .svc__aside p { color: var(--muted); }
-.svc__aside img { margin-top: 2rem; border-radius: var(--radius); }
+.svc__aside img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; margin-top: 2rem; border-radius: var(--radius); }
 
 .svc-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .svc-list a {
@@ -435,7 +432,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .case { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
 .case__media { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
 .case__media figure { position: relative; margin: 0; }
-.case__media img { border-radius: var(--radius); }
+.case__media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
 .case__media figcaption {
   position: absolute; left: .75rem; top: .75rem;
   padding: .3rem .6rem; background: var(--ink); color: #fff;
@@ -473,12 +470,13 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 }
 .layer__in {
   display: grid; grid-template-columns: 5.5rem minmax(0, 1fr) 11rem;
-  gap: 1rem 2.5rem; align-items: baseline;
+  gap: 1rem 2.5rem; align-items: center;
   padding-block: clamp(2.25rem, 4vw, 3.25rem);
 }
 .layer__n {
   font-family: var(--font-display); font-weight: 700; line-height: 1;
   font-size: clamp(2.5rem, 4vw, 3.5rem); color: rgba(255, 255, 255, .3);
+  transform: translateY(-.17em); /* Oswald digits sit low in their line box */
 }
 .layer h3 { color: #fff; font-size: clamp(1.5rem, 2.4vw, 2rem); margin-bottom: .35rem; }
 .layer p { margin: 0; max-width: 44em; }
@@ -621,6 +619,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .prose h2 { font-size: clamp(1.75rem, 3vw, 2.4rem); margin-top: 2.75rem; }
 .prose > h2:first-child { margin-top: 0; }
 .prose p { color: #2c3336; }
+.prose img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
 
 .checks { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem 2rem; list-style: none; margin: 0 0 1em; padding: 0; }
 .checks li { position: relative; padding-left: 1.75rem; }
@@ -727,8 +726,7 @@ tbody th { font-weight: 700; white-space: nowrap; }
 @media (max-width: 960px) {
   .hero { display: flex; flex-direction: column; }
   .hero__text { max-width: none; min-height: 0; padding-block: 5.5rem 3rem; padding-right: 0; }
-  .hero__media { order: 2; position: relative; width: 100%; aspect-ratio: 4 / 3; }
-  .hero__media::after { background: linear-gradient(180deg, var(--ink) 0, rgba(28, 33, 36, 0) 22%); }
+  .hero__media { order: 2; position: relative; width: 100%; aspect-ratio: 4 / 3; border-left: 0; border-top: 6px solid var(--orange); }
 
   .page-hero__grid, .sec-head, .svc, .case, .split, .areas, .estimate__grid, .content, .faq-layout { grid-template-columns: minmax(0, 1fr); }
   .sidebar > .card:not(.card--light) { position: static; }
