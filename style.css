@@ -307,7 +307,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 
 /* The photo ends at a solid orange edge instead of fading into the background */
 .hero__media { position: absolute; top: 0; right: 0; bottom: 0; width: 44%; z-index: 1; border-left: 6px solid var(--orange); }
-.hero__media img { width: 100%; height: 100%; object-fit: cover; }
+.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
 
 .facts {
   display: flex; flex-wrap: wrap; gap: .5rem 1.75rem;
