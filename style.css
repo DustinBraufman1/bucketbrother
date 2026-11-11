@@ -620,6 +620,8 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .prose > h2:first-child { margin-top: 0; }
 .prose p { color: #2c3336; }
 .prose img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); }
+.prose__fig { margin: 2.25rem 0 0; }
+.prose__fig figcaption { margin-top: .7rem; font-size: .95rem; color: var(--muted); }
 
 .checks { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem 2rem; list-style: none; margin: 0 0 1em; padding: 0; }
 .checks li { position: relative; padding-left: 1.75rem; }
